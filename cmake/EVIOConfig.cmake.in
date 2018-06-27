@@ -1,9 +1,7 @@
 @PACKAGE_INIT@
-
 include("@PACKAGE_TARGETS_INSTALL_PATH@")
-
 check_required_components(EVIO)
-
+#
 #get_filename_component(EVIO_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 #include(CMakeFindDependencyMacro)
 #
@@ -21,4 +19,7 @@ check_required_components(EVIO)
 #    include("${EVIO_CMAKE_DIR}/EVIOTargets.cmake")
 #endif()
 #
-#set(EVIO_LIBRARIES EVIO::EVIO)
+#set(EVIO_LIBRARIES EVIO::EVIO EVIO::EVIOStatic EVIO::EVIOcpp)
+#set(EVIO_FOUND TRUE)
+
+

@@ -53,7 +53,7 @@ target_link_libraries(evioStatic
   PUBLIC ${ZLIB_LIBRARIES}
 )
 
-set_target_properties(evioStatic PROPERTIES OUTPUT_NAME evio)
+#set_target_properties(evioStatic PROPERTIES OUTPUT_NAME evioStatic)
 
 install(TARGETS evio evioStatic
     EXPORT evio-targets
@@ -61,7 +61,7 @@ install(TARGETS evio evioStatic
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 set_target_properties(evio PROPERTIES EXPORT_NAME EVIO)
-set_target_properties(evioStatic PROPERTIES EXPORT_NAME EVIO)
+set_target_properties(evioStatic PROPERTIES EXPORT_NAME EVIOStatic)
 
 #This is required so that the exported target has the name JSONUtils and not jsonutils
 
