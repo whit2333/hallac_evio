@@ -23,8 +23,6 @@ find_package(ZLIB REQUIRED)
 add_subdirectory(src/libsrc)
 add_subdirectory(src/libsrc++)
 add_subdirectory(src/execsrc)
-#src/examples
-#src/test
 
 ##############################################
 # Installation instructions
