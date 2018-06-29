@@ -1,8 +1,12 @@
 @PACKAGE_INIT@
 include("@PACKAGE_TARGETS_INSTALL_PATH@")
 check_required_components(EVIO)
-#set(EVIO_FOUND TRUE)
-#
+
+find_package(EXPAT REQUIRED COMPONENTS EXPAT )
+find_package(Threads REQUIRED)
+find_package(ZLIB REQUIRED)
+message(STATUS "Found EVIO")
+
 #get_filename_component(EVIO_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 #include(CMakeFindDependencyMacro)
 #
