@@ -23,8 +23,6 @@ find_package(ZLIB REQUIRED)
 add_subdirectory(src/libsrc)
 add_subdirectory(src/libsrc++)
 add_subdirectory(src/execsrc)
-#src/examples
-#src/test
 
 ##############################################
 # Installation instructions
@@ -63,10 +61,6 @@ install(FILES
 
 ##############################################
 ## Exporting from the build tree
-#configure_file(${CMAKE_CURRENT_LIST_DIR}/cmake/FindRapidJSON.cmake
-#    ${CMAKE_CURRENT_BINARY_DIR}/FindRapidJSON.cmake
-#    COPYONLY)
-
 export(EXPORT evio-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/EVIOTargets.cmake NAMESPACE EVIO::)
 
 #Register package in user's package registry

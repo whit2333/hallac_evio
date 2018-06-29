@@ -28,7 +28,7 @@ target_include_directories(evioxx
 target_link_libraries(evioxx
   PUBLIC ${EXPAT_LIBRARIES}
   PUBLIC ${CMAKE_THREAD_LIBS_INIT}
-  PRIVATE EVIO::EVIO
+  PRIVATE evio
 )
 #include(GNUInstallDirs)
 #set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/JSONUtils)

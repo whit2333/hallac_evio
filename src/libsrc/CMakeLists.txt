@@ -19,8 +19,8 @@ set(headers
   )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
-add_library(EVIO::EVIO ALIAS evio)
-add_library(EVIO::EVIOStatic ALIAS evioStatic)
+#add_library(EVIO::EVIO ALIAS evio)
+#add_library(EVIO::EVIOStatic ALIAS evioStatic)
 
 #Set target properties
 target_include_directories(evio

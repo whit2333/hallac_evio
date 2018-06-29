@@ -2,24 +2,24 @@ cmake_minimum_required(VERSION 3.5)
 
 add_executable(evio2xml evio2xml.cc)
 target_link_libraries(evio2xml 
-  EVIO::EVIO
+  evio
   EVIO::EVIOcpp
   )
 
 add_executable(evioCat evioCat.cc)
 target_link_libraries(evioCat 
-  EVIO::EVIO
+  evio
   EVIO::EVIOcpp
   )
 
 add_executable(eviocopy eviocopy.c)
 target_link_libraries(eviocopy 
-  EVIO::EVIOStatic
+  evioStatic
   )
 
 add_executable(xml2evio eviocopy.c)
 target_link_libraries(xml2evio 
-  EVIO::EVIOStatic
+  evioStatic
   )
 
 install(TARGETS evio2xml evioCat eviocopy xml2evio
