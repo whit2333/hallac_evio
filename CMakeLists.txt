@@ -61,6 +61,8 @@ install(FILES
 
 ##############################################
 ## Exporting from the build tree
+export(TARGETS EVIO NAMESPACE EVIO:: )
+
 export(EXPORT evio-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/EVIOTargets.cmake NAMESPACE EVIO::)
 
 #Register package in user's package registry
