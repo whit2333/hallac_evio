@@ -66,4 +66,3 @@ export(EXPORT evio-targets FILE ${CMAKE_CURRENT_BINARY_DIR}/EVIOTargets.cmake NA
 #Register package in user's package registry
 export(PACKAGE EVIO)
 
-export(TARGETS EVIO::evio EVIO::evioStatic )
