@@ -77,7 +77,7 @@ public:
   bool tagNumExists(const tagNum& tn) const;
   int tagNumCount(const tagNum& tn) const;
   bankIndexRange getRange(const tagNum& tn) const;
-  bankIndex getBankIndex(const tagNum &tn) const ;
+  bankIndex getBankIndex(const tagNum &tn) const throw(evioException);
   int getMaxDepth();
 
 

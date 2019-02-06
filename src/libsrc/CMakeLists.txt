@@ -5,17 +5,21 @@ add_library(evio SHARED
   eviofmt.c
   eviofmtswap.c
   evioswap.c
+  evioBankUtil.c
   )
 add_library(evioStatic STATIC 
   evio.c
   eviofmt.c
   eviofmtswap.c
   evioswap.c
+  evioBankUtil.c
   )
 
 set(headers 
   evio.h
   msinttypes.h
+  evioBankUtil.h
+  #evioUtil.h
   )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing

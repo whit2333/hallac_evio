@@ -17,6 +17,7 @@ add_library(EVIO::EVIOcpp ALIAS evioxx)
 target_include_directories(evioxx
     PUBLIC
         $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include/evio>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}

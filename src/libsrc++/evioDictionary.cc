@@ -6,7 +6,6 @@
 
 
 #include "evioDictionary.hxx"
-#include <iostream>
 #include <fstream>
 
 
@@ -50,7 +49,7 @@ evioDictionary::evioDictionary(ifstream &dictIFS, const string &sep) : separator
       string s;
       while((dictIFS.good())&&(!dictIFS.eof())) {
         getline(dictIFS,s);
-        if(s.size()>0)dictionaryXML += s + '\n';
+        if(s.size()>0)dictionaryXML += s + "\n";
       }
       dictIFS.close();
     } else {
@@ -100,7 +99,7 @@ bool evioDictionary::parseDictionary(const string &dictionaryXML) {
       
 
   // parse XML dictionary
-  bool ok = XML_Parse(xmlParser,dictionaryXML.c_str(),dictionaryXML.size(),true)!=0;
+  bool ok = XML_Parse(xmlParser,dictionaryXML.c_str(),(int)dictionaryXML.size(),true)!=0;
   if(!ok) {
     cerr << endl << "  ?evioDictionary::parseDictionary...parse error"
          << endl << endl << XML_ErrorString(XML_GetErrorCode(xmlParser));
@@ -172,7 +171,7 @@ void evioDictionary::startElementHandler(void *userData, const char *xmlname, co
   
 
   // add tag/num pair and full (hierarchical) name to both maps, first check for duplicates
-  tagNum tn = tagNum(tag,num);
+  tagNum tn = tagNum((uint16_t)tag, (uint8_t)num);
   if((d->getNameMap.find(tn)==d->getNameMap.end())&&(d->getTagNumMap.find(fullName)==d->getTagNumMap.end())) {
     d->getNameMap[tn]         = fullName;
     d->getTagNumMap[fullName] = tn;
@@ -212,7 +211,7 @@ void evioDictionary::endElementHandler(void *userData, const char *xmlname) {
  * @param name Name of bank
  * @return tagNum
  */
-tagNum evioDictionary::getTagNum(const string &name) const  {
+tagNum evioDictionary::getTagNum(const string &name) const throw(evioException) {
   map<string,tagNum>::const_iterator iter = getTagNumMap.find(name);
   if(iter!=getTagNumMap.end()) {
     return((*iter).second);
@@ -231,7 +230,7 @@ tagNum evioDictionary::getTagNum(const string &name) const  {
  * @param tn tagNum of bank
  * @return name
  */
-string evioDictionary::getName(tagNum tn) const  {
+string evioDictionary::getName(tagNum tn) const throw(evioException) {
   map<tagNum,string>::const_iterator iter = getNameMap.find(tn);
   if(iter!=getNameMap.end()) {
     return((*iter).second);
@@ -275,7 +274,7 @@ string evioDictionary::getSeparator(void) const {
  * Converts dictionary into string.
  * @return String containing dictionary keys and values
  */
-string evioDictionary::toString(void) const  {
+string evioDictionary::toString(void) const throw(evioException) {
 
   stringstream ss;
 
